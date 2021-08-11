@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "nodemon dist/index.js",
+    "test": "nodemon lib/index.js",
     "compilar": "tsc -w",
-    "start": "node dist/index.js"
+    "start": "node lib/index.js"
   },
   "author": "",
   "license": "ISC",
