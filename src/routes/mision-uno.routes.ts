@@ -14,7 +14,7 @@ class MisionUnoRoutes {
 
     config() {
         this.router.post('/api/mision-uno/create', [userMiddleware.validarJWT], misionUnoController.create);
-        this.router.get('/api/mision-uno/read', [userMiddleware.validarJWT], misionUnoController.read);
+        this.router.get('/api/mision-uno/read', [], misionUnoController.read);
     }
 
 }
