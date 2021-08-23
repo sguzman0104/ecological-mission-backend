@@ -9,10 +9,10 @@ class UserController{
 
     async create(req: Request, res: Response){
 
-        const { name, email, passwords, img, genero, role } = req.body;
+        const { name, email, passwords, img, genero } = req.body;
         const salt = bcryt.genSaltSync();
         const password = bcryt.hashSync(passwords,salt);
-        const newUSer = new userShema({ name, email, password, img, genero, role });
+        const newUSer = new userShema({ name, email, password, img, genero });
 
         await newUSer.save().then((user: any)=>{
             res.status(200).json({
