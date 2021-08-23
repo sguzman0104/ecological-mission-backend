@@ -14,6 +14,7 @@ class MisionTresRoutes {
 
     config() {
         this.router.post('/api/mision-tres/create', [userMiddleware.validarJWT], misionTresController.create);
+        this.router.get('/api/mision-tres/read', [userMiddleware.validarJWT], misionTresController.read);
     }
 
 }

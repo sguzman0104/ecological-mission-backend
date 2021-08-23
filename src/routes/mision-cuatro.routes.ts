@@ -14,6 +14,7 @@ class MisionCuatroRoutes {
 
     config() {
         this.router.post('/api/mision-cuatro/create', [userMiddleware.validarJWT], misionCuatroController.create);
+        this.router.get('/api/mision-cuatro/read', [userMiddleware.validarJWT], misionCuatroController.read);
     }
 
 }

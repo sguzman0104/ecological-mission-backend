@@ -1,7 +1,8 @@
 import { Request, Response } from "express";
+import { FunctionsClass } from "../functions/functions";
 import misionCincoModel from "../models/mision-cinco.model";
 
-class MisionCincoController {
+class MisionCincoController extends FunctionsClass {
    async create(req: Request, res: Response) {
         const id_user = req.body.token.data._id;
         const nameUser = req.body.token.data.name;
@@ -23,6 +24,22 @@ class MisionCincoController {
             });
         })
    }
+
+   async read(req: Request, res: Response){
+        const params = [];
+        params[0] = req.params.page as string;
+        params[1] = req.params.perpage as string;
+
+        const page = parseInt(params[0]) || 1;
+        const perpage = parseInt(params[1]) || 10;
+
+        super.readMision({}, perpage, page, misionCincoModel).then(data=>{
+            res.json(data);
+        }).catch(error=>{
+            res.status(401).json(error);
+        });
+    }
+
 }
 
 export default new MisionCincoController

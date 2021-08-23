@@ -14,6 +14,7 @@ class MisionDosRoutes {
 
     config() {
         this.router.post('/api/mision-dos/create', [userMiddleware.validarJWT], misionDosController.create);
+        this.router.get('/api/mision-dos/read', [userMiddleware.validarJWT], misionDosController.create);
     }
 
 }
