@@ -3,6 +3,7 @@ import foroRoutes from './foro.routes';
 import misionCincoRoutes from './mision-cinco.routes';
 import misionCuatroRoutes from './mision-cuatro.routes';
 import misionDosRoutes from './mision-dos.routes';
+import misionSeisRoutes from './mision-seis.routes';
 import misionTresRoutes from './mision-tres.routes';
 import misionUnoRoutes from './mision-uno.routes';
 import userRoutes from './user.routes';
@@ -30,6 +31,7 @@ class IndexRoutes {
         this.app.use(misionTresRoutes);
         this.app.use(misionCuatroRoutes);
         this.app.use(misionCincoRoutes);
+        this.app.use(misionSeisRoutes);
     }
 
 }
